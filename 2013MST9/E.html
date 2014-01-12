@@ -1,0 +1,132 @@
+<h4>Problem Description</h4>
+
+<p>
+A mad scientist found an ancient message from an obsolete IBN System/360 mainframe. He believes that this message contains some very important secret about the Stein's Windows Project. The IBN System/360 mainframe uses Extended Binary Coded Decimal Interchange Code (EBCDIC). But his Artificial Intelligence Personal Computer (AIPC) only supports American Standard Code for Information Interchange (ASCII). To read the message, the mad scientist ask you, his assistant, to convert it from EBCDIC to ASCII.
+
+<style>
+table.ebcdictab {
+  border-collapse: collapse;
+}
+
+table.ebcdictab th, table.ebcdictab td {
+  border: 1px solid #AAA;
+  min-width: 40px;
+  text-align: center;
+}
+
+table.ebcdictab td.undef {
+  background-color: #EEE;
+}
+</style>
+
+<p>
+Here is the EBCDIC table.<br>
+
+<table class="ebcdictab">
+<tr><th></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr>
+<tr><th>0</th>
+<td>NUL</td><td>SOH</td><td>STX</td><td>ETX</td><td class="undef"></td><td>HT</td><td class="undef"></td><td>DEL</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td>VT</td><td>FF</td><td>CR</td><td>SO</td><td>SI</td>
+</tr>
+<tr><th>1</th>
+<td>DLE</td><td>DC1</td><td>DC2</td><td>DC3</td><td class="undef"></td><td class="undef"></td><td>BS</td><td class="undef"></td><td>CAN</td><td>EM</td><td class="undef"></td><td class="undef"></td><td>IFS</td><td>IGS</td><td>IRS</td><td>IUS ITB</td>
+</tr>
+<tr><th>2</th>
+<td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td>LF</td><td>ETB</td><td>ESC</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td>ENQ</td><td>ACK</td><td>BEL</td>
+</tr>
+<tr><th>3</th>
+<td class="undef"></td><td class="undef"></td><td>SYN</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td>EOT</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td>DC4</td><td>NAK</td><td class="undef"></td><td>SUB</td>
+</tr>
+<tr><th>4</th>
+<td>SP</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td>.</td><td>&lt;</td><td>(</td><td>+</td><td>|</td>
+</tr>
+<tr><th>5</th>
+<td>&amp;</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td>!</td><td>$</td><td>*</td><td>)</td><td>;</td><td class="undef"></td>
+</tr>
+<tr><th>6</th>
+<td>-</td><td>/</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td>,</td><td>%</td><td>_</td><td>&gt;</td><td>?</td>
+</tr>
+<tr><th>7</th>
+<td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td>`</td><td>:</td><td>#</td><td>@</td><td>'</td><td>=</td><td>"</td>
+</tr>
+<tr><th>8</th>
+<td class="undef"></td><td>a</td><td>b</td><td>c</td><td>d</td><td>e</td><td>f</td><td>g</td><td>h</td><td>i</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td>
+</tr>
+<tr><th>9</th>
+<td class="undef"></td><td>j</td><td>k</td><td>l</td><td>m</td><td>n</td><td>o</td><td>p</td><td>q</td><td>r</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td>
+</tr>
+<tr><th>A</th>
+<td class="undef"></td><td>~</td><td>s</td><td>t</td><td>u</td><td>v</td><td>w</td><td>x</td><td>y</td><td>z</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td>
+</tr>
+<tr><th>B</th>
+<td>^</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td>[</td><td>]</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td>
+</tr>
+<tr><th>C</th>
+<td>{</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td>
+</tr>
+<tr><th>D</th>
+<td>}</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td>
+</tr>
+<tr><th>E</th>
+<td>\</td><td class="undef"></td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td>
+</tr>
+<tr><th>F</th>
+<td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td><td class="undef"></td>
+</tr>
+</table>
+
+<p>
+Here is the ASCII table.<br>
+
+<table class="ebcdictab">
+<tr><th></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr>
+<tr><th>0</th>
+<td>NUL</td><td>SOH</td><td>STX</td><td>ETX</td><td>EOT</td><td>ENQ</td><td>ACK</td><td>BEL</td><td>BS</td><td>HT</td><td>LF</td><td>VT</td><td>FF</td><td>CR</td><td>SO</td><td>SI</td>
+</tr>
+<tr><th>1</th>
+<td>DLE</td><td>DC1</td><td>DC2</td><td>DC3</td><td>DC4</td><td>NAK</td><td>SYN</td><td>ETB</td><td>CAN</td><td>EM</td><td>SUB</td><td>ESC</td><td>IFS</td><td>IGS</td><td>IRS</td><td>IUS ITB</td>
+</tr>
+<tr><th>2</th>
+<td>SP</td><td>!</td><td>"</td><td>#</td><td>$</td><td>%</td><td>&amp;</td><td>'</td><td>(</td><td>)</td><td>*</td><td>+</td><td>,</td><td>-</td><td>.</td><td>/</td>
+</tr>
+<tr><th>3</th>
+<td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>:</td><td>;</td><td>&lt;</td><td>=</td><td>&gt;</td><td>?</td>
+</tr>
+<tr><th>4</th>
+<td>@</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td>
+</tr>
+<tr><th>5</th>
+<td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td><td>[</td><td>\</td><td>]</td><td>^</td><td>_</td>
+</tr>
+<tr><th>6</th>
+<td>`</td><td>a</td><td>b</td><td>c</td><td>d</td><td>e</td><td>f</td><td>g</td><td>h</td><td>i</td><td>j</td><td>k</td><td>l</td><td>m</td><td>n</td><td>o</td>
+</tr>
+<tr><th>7</th>
+<td>p</td><td>q</td><td>r</td><td>s</td><td>t</td><td>u</td><td>v</td><td>w</td><td>x</td><td>y</td><td>z</td><td>{</td><td>|</td><td>}</td><td>~</td><td>DEL</td>
+</tr>
+</table>
+
+<h4>Input</h4>
+
+<p>
+The input of this problem is a line of uppercase hexadecimal string of even length. Every two hexadecimal digits stands for a character in EBCDIC, for example, "88" stands for 'h'.
+
+<h4>Output</h4>
+
+<p>
+Convert the input from EBCDIC to ASCII, and output it in the same format as the input.
+
+<h4>Sample Input</h4>
+
+<pre>
+C59340D7A2A840C3969587999696
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+456C2050737920436F6E67726F6F
+</pre>
+
+<h4>Author</h4>
+
+Zejun Wu (watashi)
